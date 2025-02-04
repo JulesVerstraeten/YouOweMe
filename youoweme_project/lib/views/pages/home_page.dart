@@ -19,10 +19,8 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              child: Center(
-                child: Text('Home page'),
-              ),
+            Center(
+              child: Text('Home page'),
             ),
           ],
         ),

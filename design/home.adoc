@@ -1,0 +1,37 @@
+= You Owe Me
+:author: Jules Verstraeten
+:toc: auto
+
+== Beschrijving
+Dit document gaat alle informatie bevatten wat er in het project van "You Owe Me" zou bevatten zoals datamodellen, UI/UX designs, doelen en nog meer.
+
+== Doelen
+- **Modulair:** Alle componenten moeten herbruikbaar zijn
+- **Schaalbaarheid:** Moet met veel data kunnen omgaan
+- **UX:** User Experience moet zeer aangenaam zijn
+- **Toegankelijk:** Het software moet overal toegankelijk kunnen zijn (telefoon, laptop, tablet)
+
+== Functionaliteiten
+* Lenen van geld aan contactpersonen
+* Geschiedenis bijhouden van het geld dat uitgeleend is en of het betaald is
+* Lening kunnen delen aan contact persoon
+* Lening kunnen aanpassen
+* Lening definitief kunnen verwijderen
+* Contactpersoon kunnen toevoegen
+* Contactpersoon kunnen aanpassen
+* Contact persoon kunnen verwijderen
+* Kunnen inloggen met (biometrische) code bij het opstarten van de app
+* Fijne overzicht van alle leningen van een contactpersoon
+* Fijne overzicht van totale bedrag van alle leningen van elk contactpersoon die iets open heeft staan
+
+== Architectuurkeuze
+* **Backend:** 
+** REST: C# ASP.NET
+** VPS: Hetzner?
+** Online database: PostgreSQL
+** Database host: Supabase
+** Offline database: sqlite3
+* **Frontend:** Flutter
+
+
+== Design

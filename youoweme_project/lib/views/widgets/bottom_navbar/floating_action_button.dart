@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youoweme_project/core/utils/theme.dart';
 
 class FloatingActionButtonCenterDock extends StatelessWidget {
   const FloatingActionButtonCenterDock({super.key});
@@ -9,13 +10,13 @@ class FloatingActionButtonCenterDock extends StatelessWidget {
       width: 65,
       height: 65,
       child: FloatingActionButton(
-        backgroundColor: const Color.fromARGB(217, 217, 217, 217),
+        backgroundColor: AppStyles.primaryColor(context),
         shape: const CircleBorder(),
         elevation: 0,
         child: Icon(
           Icons.add,
           size: 40,
-          color: Color.fromARGB(255, 64, 64, 64),
+          color: AppStyles.secondaryColor3(context),
         ),
         onPressed: () {
           // Handle the floating action button press here

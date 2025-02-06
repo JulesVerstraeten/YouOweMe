@@ -1,0 +1,1 @@
+enum TransactionStatus { open, closed }

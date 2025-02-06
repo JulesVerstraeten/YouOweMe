@@ -5,6 +5,16 @@
 
 link:home.adoc[Home]
 
+== TODO's
+
+=== Versie Beta 1.0
+Ik wil het meest simpelste versie van het programma, het enigste wat men moet kunnen doen is een contact toevoegen, een lening bij dat contact persoon open zetten, en een lening afbetaald zetten, als lening is afbetaald gaat de lening naar de historie
+
+    * [*] Modellen maken
+    * [] Functie's van modellen maken
+    * [] Repositorie maken
+    * [] UI maken
+
 == Week 6
 === 05/02
 Circa 2.5 uur

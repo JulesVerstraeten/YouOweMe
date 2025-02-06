@@ -1,0 +1,20 @@
+= You Owe Me - Logboek
+:author: Jules Verstraeten
+:toc: auto
+:imagesdir: images
+
+link:home.adoc[Home]
+
+== Week 6
+=== 05/02
+Circa 2.5 uur
+
+[.lead]
+REST, database,..  welke?
+
+    Ik heb vooral gezocht naar wat ik zou kunnen gebruiken voor mijn programma, welke rest api en database. Ik wou eerst voor C# ASP.NET gaan omdat ik dit zou moeten leren voor mijn opleiding en het zou goed staan voor mijn portofolio. Maar achteraf ben ik gaan twijfelen tussen ASP.NET of Django. Hier ga ik later op terug komen. Database zou PostgreSQL zijn op Supabase, dit is ook nog niet 100% zeker.
+
+[.lead]
+Logs bestand bijgehouden
+
+    Ik heb heel veel aan het logbestand toegevoegd onderandere de classmodel en het design principes

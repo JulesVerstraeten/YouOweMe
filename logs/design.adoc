@@ -1,0 +1,31 @@
+= You Owe Me - Logboek
+:author: Jules Verstraeten
+:toc: auto
+:imagesdir: images
+
+link:home.adoc[Home]
+
+== Home pagina
+Op de homepagina is het belangrijk dat alles overzichtelijk is maar ook niet te chaotish
+
+image::app-homepage.png[]
+
+== Voeg transactie toe pagina
+
+image::app-addtransactionpage.png[]
+
+== Voeg contact toe pagina
+
+image::app-addcontactpage.png[]
+
+== Contacten pagina
+
+image::app-contactspage.png[]
+
+== Transactie pagina
+
+image::app-transactionpage.png[]
+
+== Bewerk transactie pagina
+
+image::app-edittransactionpage.png[]

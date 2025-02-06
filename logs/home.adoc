@@ -1,9 +1,14 @@
 = You Owe Me
 :author: Jules Verstraeten
 :toc: auto
+:imagesdir: images
 
 == Beschrijving
 Dit document gaat alle informatie bevatten wat er in het project van "You Owe Me" zou bevatten zoals datamodellen, UI/UX designs, doelen en nog meer.
+
+== Logboek
+
+link:logboek.adoc[Logboek]
 
 == Doelen
 - **Modulair:** Alle componenten moeten herbruikbaar zijn
@@ -26,12 +31,20 @@ Dit document gaat alle informatie bevatten wat er in het project van "You Owe Me
 
 == Architectuurkeuze
 * **Backend:** 
-** REST: C# ASP.NET
-** VPS: Hetzner?
-** Online database: PostgreSQL
-** Database host: Supabase
+** REST ???:
+*** C# ASP.NET - Omdat ik hier ervaring mee heb en beter voor de portofolio
+*** Python Django - Veel simpeler en sneller te schrijven
+** VPS: Hetzner
+** Online database ???: 
+*** ASP.NET: SQL Server + Azure
+*** Django: PostgreSQL + Supabase
 ** Offline database: sqlite3
 * **Frontend:** Flutter
 
+== Class diagram
+
+image::class-diagram.png[class-diagram]
 
 == Design
+
+link:design.adoc[Design]

@@ -36,3 +36,31 @@ Circa 4-5 uur
 UI, modellen en repositorie
 
     Ik heb vandaag heel veel aan de UI van de homepagina gewerkt, ik heb daarvoor vele testen gemaakt met modellen, lokale repositorie, lokale service en lokale viewmodels, alles werkt na verwacht. Alle modellen zijn tot nu toe goed qua design. Ik moet alleen nog wel de voorwaardes instellen van de modellen.
+
+[.lead]
+Veranderd/toegevoegd/verwijderd aan modellen:
+
+* + User
+* + Contact
+* + Transaction
+* + Payment
+
+Veranderd/toegevoegd/verwijderd aan UI-views:
+
+* ~ HomePage
+* + TransactionPage
+* + TransactionsPage
+* + ContactPage
+* + ContactsPage
+* + AddTransactionPage
+* + AddContactPage
+* + EditTransactionPage
+
+
+
+Verder:
+
+* + Lokale repositorie
+* + Lokale service
+* + Lokale viewmodel
+* + Invoices widget

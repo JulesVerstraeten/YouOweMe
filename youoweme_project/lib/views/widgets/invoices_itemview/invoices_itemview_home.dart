@@ -4,7 +4,7 @@ import 'package:youoweme_project/core/utils/theme.dart';
 import 'package:youoweme_project/viewmodels/localViewModel.dart';
 
 class InvoiceListviewWidget extends StatelessWidget {
-  InvoiceListviewWidget({super.key});
+  const InvoiceListviewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

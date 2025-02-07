@@ -32,4 +32,7 @@ Logs bestand bijgehouden
 === 06/02
 Circa 4-5 uur
 
+[.lead]
+UI, modellen en repositorie
+
     Ik heb vandaag heel veel aan de UI van de homepagina gewerkt, ik heb daarvoor vele testen gemaakt met modellen, lokale repositorie, lokale service en lokale viewmodels, alles werkt na verwacht. Alle modellen zijn tot nu toe goed qua design. Ik moet alleen nog wel de voorwaardes instellen van de modellen.

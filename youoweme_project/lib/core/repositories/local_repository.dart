@@ -9,9 +9,9 @@ class LocalRepository {
 
   LocalRepository() {
     user = User(id: 0);
-    Contact c1 = Contact(id: 0, name: "Jan");
-    Contact c2 = Contact(id: 1, name: "Peter");
-    Contact c3 = Contact(id: 2, name: "Piet");
+    Contact c1 = Contact(id: 0, name: "Jan Betere");
+    Contact c2 = Contact(id: 1, name: "Peter Haargeenmeterereer");
+    Contact c3 = Contact(id: 2, name: "Piet slimme");
     Transaction t1 = Transaction(
         id: 0,
         amount: 80,
@@ -19,7 +19,6 @@ class LocalRepository {
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
-
     Transaction t2 = Transaction(
         id: 1,
         amount: 120,
@@ -50,6 +49,10 @@ class LocalRepository {
     user.addContact(c3);
   }
 
+  User fetchUser() {
+    return user;
+  }
+
   Future<List<Contact>> giveAllContacts() async {
     return user.giveAllContacts();
   }
@@ -60,9 +63,5 @@ class LocalRepository {
 
   Future<List<Contact>> getAllContactsWithOpenTransaction() async {
     return user.giveAllContactsWithOpenTransaction();
-  }
-
-  User fetchUser() {
-    return user;
   }
 }

@@ -89,3 +89,26 @@ Veranderd (~)/toegevoegd (+)/verwijderd (-)
 * ~ Main (kleine aanpassingen en darkmode)
 * ~ Theme (darkmode toepassing)
 * ~ BottomNavBarWithoutActionButton (darkmode toepassing)
+
+=== 08/02
+Circa 5 uur
+
+[.lead]
+UI
+
+    Hier heb ik vandaag het meest gewerkt. Maar ik kwam nogsteeds wel heel veel vragen op, vele dingen snap ik nog niet echt hoe ik het best kan aanpakken en toepassen. Hiervoor ga ik binnenkort even goed onderzoeken.
+
+[.lead]
+Veranderd (~)/toegevoegd (+)/verwijderd (-)
+
+* Modellen:
+** ~ Contact (Alle transactie geven methode)
+** ~ Transaction (GetAmountString, GetTitle en GetStatus methodes toegepast)
+* Views:
+** ~ ContactPage (Heel contactpage ui gemaakt, alleen nog functioneel maken)
+* Widgets:
+** + InvoiceItemviewContactWidget (de transacties module voor contactpage)
+** + ToggleButton (Toggle button voor contactpage (moet nog wel universeel gemaakt worden en echt beter geschreven worden))
+* Theme (geselecteerde text en opgeselecteerde text een vaste kleur gegeven)
+* Lokale repositorie (Fetchuser aangepast)
+* Main (ik heb daar de repo vastgezet)

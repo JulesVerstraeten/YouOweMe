@@ -7,11 +7,12 @@ import 'package:youoweme_project/views/pages/home_page.dart';
 import 'package:youoweme_project/views/pages/settings_page.dart';
 
 void main() {
+  LocalRepository _repo = LocalRepository();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => LocalViewModel(repo: LocalRepository()),
+          create: (_) => LocalViewModel(repo: _repo),
         ),
       ],
       child: MyApp(),

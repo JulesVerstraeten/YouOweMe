@@ -23,7 +23,6 @@ class HomePage extends StatelessWidget {
         page: "home",
       ),
       extendBodyBehindAppBar: false,
-
       // * Body
       body: FutureBuilder(
         future: localViewModel.fetchData(),

@@ -30,11 +30,12 @@ class User {
     _contacts[contact.returnId()]?.addTransaction(transaction);
   }
 
-  double getTotalAmount() {
+  String getTotalAmount() {
     double amount = 0;
     for (var contact in _contacts.values) {
       amount += contact.giveTotalAmount();
     }
-    return amount;
+    String amountString = amount.toStringAsFixed(2);
+    return "€$amountString";
   }
 }

@@ -14,4 +14,11 @@ class NavigationHelper {
       Navigator.pushNamed(context, '/settings');
     }
   }
+
+  // * Navigate to settings
+  static void navigateToContact(BuildContext context) {
+    if (ModalRoute.of(context)?.settings.name != '/contact') {
+      Navigator.pushNamed(context, '/contact');
+    }
+  }
 }

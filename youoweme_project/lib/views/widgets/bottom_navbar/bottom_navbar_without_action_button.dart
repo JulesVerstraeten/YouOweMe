@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youoweme_project/core/utils/navigations/navigation_helper.dart';
+import 'package:youoweme_project/core/utils/theme.dart';
 
 class BottomNavbarWithoutAction extends StatelessWidget {
   final String page;
@@ -8,16 +9,16 @@ class BottomNavbarWithoutAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
-      color: const Color.fromARGB(217, 217, 217, 217),
+      color: AppStyles.primaryColor(context),
       shape: const CircularNotchedRectangle(),
       notchMargin: 20.0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.home,
-              color: Color.fromARGB(255, 64, 64, 64),
+              color: AppStyles.secondaryColor3(context),
             ),
             onPressed: () {
               NavigationHelper.navigateToHome(context);
@@ -25,9 +26,9 @@ class BottomNavbarWithoutAction extends StatelessWidget {
             iconSize: 36,
           ),
           IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.groups,
-              color: Color.fromARGB(255, 64, 64, 64),
+              color: AppStyles.secondaryColor3(context),
             ),
             onPressed: () {
               // Add functionality for groups button
@@ -35,9 +36,9 @@ class BottomNavbarWithoutAction extends StatelessWidget {
             iconSize: 36,
           ),
           IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.description,
-              color: Color.fromARGB(255, 64, 64, 64),
+              color: AppStyles.secondaryColor3(context),
             ),
             onPressed: () {
               // Add functionality for description button
@@ -45,9 +46,9 @@ class BottomNavbarWithoutAction extends StatelessWidget {
             iconSize: 36,
           ),
           IconButton(
-            icon: const Icon(
+            icon: Icon(
               Icons.settings,
-              color: Color.fromARGB(255, 64, 64, 64),
+              color: AppStyles.secondaryColor3(context),
             ),
             onPressed: () {
               NavigationHelper.navigateToSetting(context);

@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:youoweme_project/core/utils/navigations/navigation_helper.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
-import 'package:youoweme_project/viewmodels/localViewModel.dart';
+import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
 
 class InvoiceListviewWidget extends StatelessWidget {
   const InvoiceListviewWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final localViewModel = Provider.of<LocalViewModel>(context);
+    final viewModel = Provider.of<LocalViewModel>(context);
 
     return Expanded(
       child: ListView.builder(
-        itemCount: localViewModel.getUserAllOpenTransaction().length,
+        itemCount: viewModel.contacts.length - 1,
         itemBuilder: (context, index) {
+          final contact = viewModel.contactsWithOpenTransaction[index];
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                viewModel.selectContact(contact);
+                NavigationHelper.navigateToContact(context);
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppStyles.primaryColor(context),
                 shape: RoundedRectangleBorder(
@@ -31,9 +36,7 @@ class InvoiceListviewWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      localViewModel
-                          .getUserAllOpenTransaction()[index]
-                          .giveName(),
+                      contact.giveName(),
                       style: TextStyle(
                         fontSize: 24,
                         color: AppStyles.darkText(context),
@@ -43,10 +46,7 @@ class InvoiceListviewWidget extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          localViewModel
-                              .getUserAllOpenTransaction()[index]
-                              .giveTotalAmount()
-                              .toString(),
+                          contact.getTotalAmountToString(),
                           style: TextStyle(
                             fontSize: 24,
                             color: AppStyles.darkText(context),

@@ -38,14 +38,16 @@ UI, modellen en repositorie
     Ik heb vandaag heel veel aan de UI van de homepagina gewerkt, ik heb daarvoor vele testen gemaakt met modellen, lokale repositorie, lokale service en lokale viewmodels, alles werkt na verwacht. Alle modellen zijn tot nu toe goed qua design. Ik moet alleen nog wel de voorwaardes instellen van de modellen.
 
 [.lead]
-Veranderd/toegevoegd/verwijderd aan modellen:
+Veranderd (~)/toegevoegd (+)/verwijderd (-)
+
+modellen:
 
 * + User
 * + Contact
 * + Transaction
 * + Payment
 
-Veranderd/toegevoegd/verwijderd aan UI-views:
+UI-views:
 
 * ~ HomePage
 * + TransactionPage
@@ -56,11 +58,34 @@ Veranderd/toegevoegd/verwijderd aan UI-views:
 * + AddContactPage
 * + EditTransactionPage
 
-
-
 Verder:
 
 * + Lokale repositorie
 * + Lokale service
 * + Lokale viewmodel
 * + Invoices widget
+
+=== 07/02
+Circa 2.5 uur
+
+[.lead]
+State Management
+
+    Ik ben nu achter gekomen dat State Management de beste optie is om data door te geven aan pagina's. Dit ga ik aanpakken aan mijn applicatie. State Management houd in dat er geen data hoeven doorgegeven te worden aan pagina's maar dat dit centraal worden opgeslagen in de viewmodel.
+
+    Het aanpassen naar State Management was wel echt een hele gedoe, maar het werkt nu.
+
+[.lead]
+Veranderd (~)/toegevoegd (+)/verwijderd (-)
+
+* - Lokale service (is niet nodig ivm viewModel)
+* ~ Lokale viewModel (het veranderen naar State Manager methode)
+* ~ Lokale repositorie (het aanpassen van totalAmount output(int -> string))
+* ~ User model (totalAmount output)
+* ~ Contact model (totalAmount output)
+* ~ HomePage (het veranderen naar State Manager methode)
+* ~ ContactPage (voorbereiden voor de ui)
+* ~ InvoicesItemView (het veranderen naar State Manager methode)
+* ~ Main (kleine aanpassingen en darkmode)
+* ~ Theme (darkmode toepassing)
+* ~ BottomNavBarWithoutActionButton (darkmode toepassing)

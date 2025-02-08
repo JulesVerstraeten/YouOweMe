@@ -22,6 +22,18 @@ class Contact {
     return totalAmount;
   }
 
+  // * Get total amount and convert to string
+  String getTotalAmountToString() {
+    double totalAmount = 0;
+    for (var transaction in _transactions.values.toList()) {
+      if (transaction.giveTransactionStatus() == TransactionStatus.open) {
+        totalAmount += transaction.giveAmount();
+      }
+    }
+    String totalAmountString = totalAmount.toStringAsFixed(2);
+    return "€$totalAmountString";
+  }
+
   // * Give contact's name
   String giveName() {
     return _name;

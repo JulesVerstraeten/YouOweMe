@@ -34,23 +34,31 @@ class LocalRepository {
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
+    Transaction t4 = Transaction(
+        id: 3,
+        amount: 110,
+        title: "Bier",
+        createdAt: DateTime.now(),
+        transactionStatus: TransactionStatus.open,
+        transactionType: TransactionType.loan);
     user.addContact(c1);
     user.addTransactionToContact(c1, t1);
     user.addTransactionToContact(c1, t2);
+    user.addTransactionToContact(c1, t4);
     user.addContact(c2);
     user.addTransactionToContact(c2, t3);
     user.addContact(c3);
   }
 
-  List<Contact> giveAllContacts() {
+  Future<List<Contact>> giveAllContacts() async {
     return user.giveAllContacts();
   }
 
-  double getUserTotalAmount() {
+  String getUserTotalAmount() {
     return user.getTotalAmount();
   }
 
-  List<Contact> getAllUserOpenTransaction() {
+  Future<List<Contact>> getAllContactsWithOpenTransaction() async {
     return user.giveAllContactsWithOpenTransaction();
   }
 

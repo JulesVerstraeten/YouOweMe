@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
+import 'package:youoweme_project/viewmodels/navigation_viewmodel.dart';
 
 class ToggleTransactionState extends StatefulWidget {
   const ToggleTransactionState({super.key});
@@ -13,6 +15,7 @@ class _ToggleTransactionStateState extends State<ToggleTransactionState> {
   bool isActiveSelected = true;
   @override
   Widget build(BuildContext context) {
+    final navigationViewModel = Provider.of<NavigationViewModel>(context);
     return Padding(
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
       child: Center(
@@ -47,6 +50,7 @@ class _ToggleTransactionStateState extends State<ToggleTransactionState> {
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       child: TextButton(
                         onPressed: () {
+                          navigationViewModel.goToFirstPage();
                           setState(() {
                             isActiveSelected = true;
                           });
@@ -70,6 +74,7 @@ class _ToggleTransactionStateState extends State<ToggleTransactionState> {
                       padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: TextButton(
                         onPressed: () {
+                          navigationViewModel.goToSecondPage();
                           setState(() {
                             isActiveSelected = false;
                           });

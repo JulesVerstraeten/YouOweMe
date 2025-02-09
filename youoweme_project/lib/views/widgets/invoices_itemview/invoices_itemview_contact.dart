@@ -1,15 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:youoweme_project/core/models/transaction.dart';
+import 'package:youoweme_project/core/models/transaction_status.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
 
 class InvoiceListviewContactWidget extends StatelessWidget {
-  const InvoiceListviewContactWidget({super.key});
+  final TransactionStatus _status;
+  const InvoiceListviewContactWidget(
+      {super.key, required TransactionStatus status})
+      : _status = status;
 
   @override
   Widget build(BuildContext context) {
     final viewModel = Provider.of<LocalViewModel>(context);
-    final transactions = viewModel.selectedContact!.getAllOpenTransactions();
+    final List<Transaction> transactions;
+    if (_status == TransactionStatus.open) {
+      transactions = viewModel.selectedContact!.getAllOpenTransactions();
+    } else {
+      transactions = viewModel.selectedContact!.getAllClosedTransactions();
+    }
 
     return Expanded(
       child: ListView.builder(

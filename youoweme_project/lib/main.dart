@@ -2,17 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:youoweme_project/core/repositories/local_repository.dart';
 import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
+import 'package:youoweme_project/viewmodels/navigation_viewmodel.dart';
 import 'package:youoweme_project/views/pages/contact_page.dart';
 import 'package:youoweme_project/views/pages/home_page.dart';
 import 'package:youoweme_project/views/pages/settings_page.dart';
 
 void main() {
-  LocalRepository _repo = LocalRepository();
+  LocalRepository repo = LocalRepository();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => LocalViewModel(repo: _repo),
+          create: (_) => LocalViewModel(repo: repo),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => NavigationViewModel(),
         ),
       ],
       child: MyApp(),

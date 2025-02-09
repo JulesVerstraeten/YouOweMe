@@ -4,7 +4,7 @@ import 'package:youoweme_project/core/utils/theme.dart';
 import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
 import 'package:youoweme_project/views/widgets/bottom_navbar/bottom_navbar_with_action_button.dart';
 import 'package:youoweme_project/views/widgets/bottom_navbar/floating_action_button.dart';
-import 'package:youoweme_project/views/widgets/invoices_itemview/invoices_itemview_contact.dart';
+import 'package:youoweme_project/views/widgets/pageview/contact_pageview.dart';
 import 'package:youoweme_project/views/widgets/toggle_button/toggle_transaction_state.dart';
 
 class ContactPage extends StatelessWidget {
@@ -27,6 +27,7 @@ class ContactPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
+            // * Header
             Container(
               width: double.infinity,
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
@@ -40,6 +41,7 @@ class ContactPage extends StatelessWidget {
                   Text(
                     selectedContact!.giveName(),
                     style: TextStyle(
+                      color: AppStyles.darkText(context),
                       fontSize: 34,
                       fontWeight: FontWeight.w500,
                     ),
@@ -47,6 +49,7 @@ class ContactPage extends StatelessWidget {
                   Text(
                     "Totaal: ${selectedContact.getTotalAmountToString()}",
                     style: TextStyle(
+                      color: AppStyles.darkText(context),
                       fontSize: 24,
                       fontWeight: FontWeight.w500,
                     ),
@@ -54,8 +57,10 @@ class ContactPage extends StatelessWidget {
                 ],
               ),
             ),
+            //* Toggle State
             ToggleTransactionState(),
-            InvoiceListviewContactWidget()
+            // * Invoices
+            InvoicesPageView(),
           ],
         ),
       ),

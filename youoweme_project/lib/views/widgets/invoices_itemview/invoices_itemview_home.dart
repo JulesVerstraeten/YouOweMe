@@ -14,7 +14,7 @@ class InvoiceListviewWidget extends StatelessWidget {
 
     return Expanded(
       child: ListView.builder(
-        itemCount: viewModel.contacts.length - 1,
+        itemCount: viewModel.contactsWithOpenTransaction.length,
         itemBuilder: (context, index) {
           final contact = viewModel.contactsWithOpenTransaction[index];
           return Padding(
@@ -36,7 +36,7 @@ class InvoiceListviewWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
+                    SizedBox(
                       width: screenWidth * 0.5,
                       child: Text(
                         contact.giveName(),

@@ -40,10 +40,18 @@ class LocalRepository {
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
+    Transaction t5 = Transaction(
+        id: 4,
+        amount: 80,
+        title: "Hoeren",
+        createdAt: DateTime.now(),
+        transactionStatus: TransactionStatus.closed,
+        transactionType: TransactionType.loan);
     user.addContact(c1);
     user.addTransactionToContact(c1, t1);
     user.addTransactionToContact(c1, t2);
     user.addTransactionToContact(c1, t4);
+    user.addTransactionToContact(c1, t5);
     user.addContact(c2);
     user.addTransactionToContact(c2, t3);
     user.addContact(c3);

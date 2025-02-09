@@ -65,12 +65,23 @@ class Contact {
 
   // * Give all open transactions
   List<Transaction> getAllOpenTransactions() {
-    List<Transaction> _openTransactions = [];
+    List<Transaction> openTransactions = [];
     for (Transaction transaction in _transactions.values) {
       if (transaction.getStatus() == TransactionStatus.open) {
-        _openTransactions.add(transaction);
+        openTransactions.add(transaction);
       }
     }
-    return _openTransactions;
+    return openTransactions;
+  }
+
+// * Give all open transactions
+  List<Transaction> getAllClosedTransactions() {
+    List<Transaction> openTransactions = [];
+    for (Transaction transaction in _transactions.values) {
+      if (transaction.getStatus() == TransactionStatus.closed) {
+        openTransactions.add(transaction);
+      }
+    }
+    return openTransactions;
   }
 }

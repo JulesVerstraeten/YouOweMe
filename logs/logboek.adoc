@@ -112,3 +112,31 @@ Veranderd (~)/toegevoegd (+)/verwijderd (-)
 * Theme (geselecteerde text en opgeselecteerde text een vaste kleur gegeven)
 * Lokale repositorie (Fetchuser aangepast)
 * Main (ik heb daar de repo vastgezet)
+
+=== 09/02
+Circa 6 uur
+
+[.lead]
+UI
+    
+    Vandaag alleen aan de UI gewerkt, de contactpage is af, moet nog de listview items een klik functie geven. Sliding pages toegevoegd voor add_transaction en add_contact.
+
+[.lead]
+Veranderd (~)/toegevoegd (+)/verwijderd (-)
+
+* Views:
+** ~ Home Page (dropdown menu toegevoegd voor sorteren van listview (moet nog werken gemaakt worden))
+** ~ Contact Page (UI is bijna helemaal en functioneel)
+* Sliding Pages:
+** + Sliding page voor Add Transaction en beetje gewerkt
+** + Sliding page voor Add Contact
+* Widgets:
+** + Page View (PageView voor contact page (2 pagina's naast elkaar))
+** + Text Fields (Text Field voor Slidepages)
+** ~ Bottom Navbar Floating Actionbutton functioneel gemaakt
+** ~ Invoices Itemview Contact (open en gesloten transacties opengesteld)
+** ~ Invoices Itemview Home (beter gemaakt)
+* ~ Contact model (getAllClosedTransactions voor de contactpage geimplementeerd)
+* ~ Theme (textFieldFill standaard kleur gegeven (moet nog verbeterd worden) en een textHint kleur gegeven)
+* + Navigation View Model (voor het navigeren van PageView)
+* ~ Main (Extra provider toegevoegd(Navigation View Model))

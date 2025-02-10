@@ -10,9 +10,12 @@ import 'package:youoweme_project/views/widgets/invoices_itemview/invoices_itemvi
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
+  // * Tijdelijk:
+
   @override
   Widget build(BuildContext context) {
     final localViewModel = Provider.of<LocalViewModel>(context);
+    List<String> items = ['Bedrag hoog -> laag', 'Bedrag laag -> hoog'];
 
     return Scaffold(
       backgroundColor: AppStyles.backgroundColor(context),
@@ -23,7 +26,6 @@ class HomePage extends StatelessWidget {
         page: "home",
       ),
       extendBodyBehindAppBar: false,
-
       // * Body
       body: FutureBuilder(
         future: localViewModel.fetchData(),
@@ -37,11 +39,11 @@ class HomePage extends StatelessWidget {
                     vertical: 16,
                     horizontal: 24,
                   ),
-                  margin: EdgeInsets.all(16.0),
-                  decoration: BoxDecoration(
-                    color: AppStyles.primaryColor(context),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
+                  // margin: EdgeInsets.all(16.0),
+                  // decoration: BoxDecoration(
+                  //   color: AppStyles.primaryColor(context),
+                  //   borderRadius: BorderRadius.circular(20),
+                  // ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -65,6 +67,18 @@ class HomePage extends StatelessWidget {
                 ),
 
                 // TODO Sort list button
+                DropdownButton(
+                  hint: Text("Sort"),
+                  items: items.map((String item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(item),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    setState(() {});
+                  },
+                ),
 
                 // * Outstanding invoices
                 InvoiceListviewWidget(),
@@ -75,4 +89,6 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  void setState(Null Function() param0) {}
 }

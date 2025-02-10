@@ -50,4 +50,16 @@ class Transaction {
   int returnId() {
     return _id;
   }
+
+  TransactionStatus getStatus() {
+    return _transactionStatus;
+  }
+
+  String getTitle() {
+    return _title;
+  }
+
+  String getAmountString() {
+    return "€$_amount";
+  }
 }

@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:youoweme_project/core/utils/navigations/navigation_helper.dart';
+import 'package:youoweme_project/core/models/transaction.dart';
+import 'package:youoweme_project/core/models/transaction_status.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
 
-class InvoiceListviewWidget extends StatelessWidget {
-  const InvoiceListviewWidget({super.key});
+class InvoiceListviewContactWidget extends StatelessWidget {
+  final TransactionStatus _status;
+  const InvoiceListviewContactWidget(
+      {super.key, required TransactionStatus status})
+      : _status = status;
 
   @override
   Widget build(BuildContext context) {
     final viewModel = Provider.of<LocalViewModel>(context);
-    final screenWidth = MediaQuery.of(context).size.width;
+    final List<Transaction> transactions;
+    if (_status == TransactionStatus.open) {
+      transactions = viewModel.selectedContact!.getAllOpenTransactions();
+    } else {
+      transactions = viewModel.selectedContact!.getAllClosedTransactions();
+    }
 
     return Expanded(
       child: ListView.builder(
-        itemCount: viewModel.contactsWithOpenTransaction.length,
+        itemCount: transactions.length,
         itemBuilder: (context, index) {
-          final contact = viewModel.contactsWithOpenTransaction[index];
+          final transaction = transactions[index];
           return Padding(
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
             child: ElevatedButton(
-              onPressed: () {
-                viewModel.selectContact(contact);
-                NavigationHelper.navigateToContact(context);
-              },
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                 backgroundColor: AppStyles.primaryColor(context),
                 shape: RoundedRectangleBorder(
@@ -36,24 +42,21 @@ class InvoiceListviewWidget extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    SizedBox(
-                      width: screenWidth * 0.5,
-                      child: Text(
-                        contact.giveName(),
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: AppStyles.darkText(context),
-                          fontWeight: FontWeight.normal,
-                        ),
-                        overflow: TextOverflow.fade,
-                        maxLines: 1,
-                        softWrap: false,
+                    Text(
+                      transaction.getTitle(),
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: AppStyles.darkText(context),
+                        fontWeight: FontWeight.normal,
                       ),
+                      overflow: TextOverflow.fade,
+                      maxLines: 1,
+                      softWrap: false,
                     ),
                     Row(
                       children: [
                         Text(
-                          contact.getTotalAmountToString(),
+                          transaction.getAmountString(),
                           style: TextStyle(
                             fontSize: 24,
                             color: AppStyles.darkText(context),

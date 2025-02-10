@@ -10,8 +10,6 @@ class BottomNavbarWithoutAction extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomAppBar(
       color: AppStyles.primaryColor(context),
-      shape: const CircularNotchedRectangle(),
-      notchMargin: 20.0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [

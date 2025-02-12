@@ -11,7 +11,7 @@ class LocalViewModel extends ChangeNotifier {
   User? _user;
   List<Contact> _contacts = [];
   List<Contact> _contactsWithOpenTransaction = [];
-  late Contact _selectedContact;
+  late Contact? _selectedContact;
 
   User? get user => _user;
   List<Contact> get contacts => _contacts;

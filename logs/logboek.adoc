@@ -141,6 +141,7 @@ Veranderd (~)/toegevoegd (+)/verwijderd (-)
 * + Navigation View Model (voor het navigeren van PageView)
 * ~ Main (Extra provider toegevoegd(Navigation View Model))
 
+== Week 7
 === 10/02
 Circa 0.5 uur
 

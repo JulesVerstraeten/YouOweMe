@@ -11,7 +11,7 @@ class InvoicesPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final navigationViewModel = Provider.of<NavigationViewModel>(context);
 
-    return Flexible(
+    return Expanded(
       child: PageView(
         controller: navigationViewModel.pageController,
         physics: NeverScrollableScrollPhysics(),

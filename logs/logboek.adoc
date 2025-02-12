@@ -140,3 +140,19 @@ Veranderd (~)/toegevoegd (+)/verwijderd (-)
 * ~ Theme (textFieldFill standaard kleur gegeven (moet nog verbeterd worden) en een textHint kleur gegeven)
 * + Navigation View Model (voor het navigeren van PageView)
 * ~ Main (Extra provider toegevoegd(Navigation View Model))
+
+=== 10/02
+Circa 0.5 uur
+
+[.lead]
+Contact Page Debug
+
+    Er was heletijd een foutmelding op de pagina contact-page.dart. Deze melding is gefixt, Het bleek dat ik een expanded had geplaatst bij een widget die dit pagina gebruikte. Deze heb ik weggehaald en zo is de foutmelding opgelost.
+
+[.lead]
+Veranderd (~)/toegevoegd (+)/verwijderd (-)
+
+* Views:
+** ~ Contact Page (foutmelding gedebugged)
+* Widget:
+** ~  Invoices Item View (foutmelding gedebugged)

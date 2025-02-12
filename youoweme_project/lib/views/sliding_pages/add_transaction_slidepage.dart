@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:youoweme_project/core/models/contact.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
 import 'package:youoweme_project/views/widgets/slider_items/buttons/add_button_slider.dart';

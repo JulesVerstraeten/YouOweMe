@@ -157,3 +157,16 @@ Veranderd (~)/toegevoegd (+)/verwijderd (-)
 ** ~ Contact Page (foutmelding gedebugged)
 * Widget:
 ** ~  Invoices Item View (foutmelding gedebugged)
+
+=== 12/02
+Circa 4 uur
+
+[.lead]
+Add Transaction Page
+
+    Hier heeeeel veel bezig geweest, eerst problemen gehad met en openen van de sliding pages omdat de viewmodels niet werkte in de sliding pages, daarna chaos met dropdown menu, het is nogsteeds niet echt veel gelukt maar dit word volgende keer goed aangepakt!
+
+[.lead]
+Veranderd (~)/toegevoegd (+)/verwijderd (-)
+
+// TODO Ga ik later doen

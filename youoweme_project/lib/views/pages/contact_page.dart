@@ -5,7 +5,7 @@ import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
 import 'package:youoweme_project/views/widgets/bottom_navbar/bottom_navbar_with_action_button.dart';
 import 'package:youoweme_project/views/widgets/bottom_navbar/floating_action_button.dart';
 import 'package:youoweme_project/views/widgets/pageview/contact_pageview.dart';
-import 'package:youoweme_project/views/widgets/toggle_button/toggle_transaction_state.dart';
+import 'package:youoweme_project/views/widgets/buttons/toggle_transaction_state.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -30,7 +30,7 @@ class ContactPage extends StatelessWidget {
             // * Header
             Container(
               width: double.infinity,
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 24),
+              padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
               // margin: EdgeInsets.all(16),
               // decoration: BoxDecoration(
               //     color: AppStyles.primaryColor(context),

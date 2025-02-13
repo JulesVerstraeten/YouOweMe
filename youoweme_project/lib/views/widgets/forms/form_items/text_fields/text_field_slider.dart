@@ -2,20 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 
 class InputFieldSlider extends StatelessWidget {
+  final int? _maxLines;
   final String? _hintText;
   final TextInputType _keyboardType;
-  InputFieldSlider({super.key, String? hintText, bool? numberKeyboard})
+  InputFieldSlider(
+      {super.key,
+      String? hintText,
+      TextInputType? numberKeyboard,
+      int? maxLines})
       : _hintText = hintText,
-        _keyboardType = numberKeyboard == true
-            ? TextInputType.numberWithOptions()
-            : TextInputType.text;
+        _keyboardType = numberKeyboard ?? TextInputType.text,
+        _maxLines = maxLines ?? 1;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 8.0),
       //margin: EdgeInsets.symmetric(horizontal: 16.0),
-      child: TextField(
+      child: TextFormField(
+        maxLines: _maxLines,
         cursorColor: AppStyles.darkText(context),
         keyboardType: _keyboardType,
         style: TextStyle(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 
-class ContactSlidePage extends StatelessWidget {
-  const ContactSlidePage({super.key});
+class AddContactSlidePage extends StatelessWidget {
+  const AddContactSlidePage({super.key});
 
   @override
   Widget build(BuildContext context) {

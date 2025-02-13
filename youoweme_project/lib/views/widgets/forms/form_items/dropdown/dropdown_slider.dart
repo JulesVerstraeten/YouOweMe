@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:youoweme_project/core/utils/string_utils.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 
 class DropDownSlider<T> extends StatelessWidget {
+  final String? hintText;
   final List<T> items;
   final T? selectedItem;
   final String Function(T) itemLabelBuilder;
@@ -12,14 +14,31 @@ class DropDownSlider<T> extends StatelessWidget {
       required this.items,
       this.selectedItem,
       required this.itemLabelBuilder,
-      required this.onChanged});
+      required this.onChanged,
+      this.hintText = "Kies contact"});
 
   @override
   Widget build(BuildContext context) {
     return Flexible(
       child: Container(
+        padding: EdgeInsets.symmetric(vertical: 8.0),
         constraints: BoxConstraints(maxWidth: 10000),
-        child: DropdownButton<T>(
+        child: DropdownButtonFormField<T>(
+          decoration: InputDecoration(
+            hintText: hintText,
+            filled: true,
+            fillColor: AppStyles.textFieldFill(context),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide:
+                  BorderSide(width: 2, color: AppStyles.primaryBlue(context)),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide:
+                  BorderSide(width: 0, color: AppStyles.textFieldFill(context)),
+            ),
+          ),
           isExpanded: true,
           icon: Icon(
             Icons.keyboard_arrow_down_rounded,
@@ -35,8 +54,9 @@ class DropDownSlider<T> extends StatelessWidget {
           items: items.map<DropdownMenuItem<T>>((T item) {
             return DropdownMenuItem<T>(
               value: item,
-              child: Text(itemLabelBuilder(
-                  item)), // Laat het label zien gebaseerd op de functie
+              child: Text(
+                StringUtils.capitalizeFirstLetter(itemLabelBuilder(item)),
+              ), // Laat het label zien gebaseerd op de functie
             );
           }).toList(),
         ),

@@ -170,3 +170,47 @@ Add Transaction Page
 Veranderd (~)/toegevoegd (+)/verwijderd (-)
 
 // TODO Ga ik later doen
+
+=== 13/02
+Circa 5 uur
+
+[.lead]
+Rare probleem
+
+    Er was heletijd iets raars, tijdens debuggen kreeg ik konstant meldingen van I/MESA, wel een stuk of 30 per seconden. Dit duurde ongeveer anderhalf uur om op te lossen. Het bleek dat ik bij .fetchData() NotifyListener had gebruikt. Dit zorgte voor dat het pagina voortdurend de data aan het laden was. Waardoor dus het programma blijft draaien.
+
+[.lead]
+UI Add Transaction
+
+    De UI van Add Transaction Slide is 99% af. Alleen die DropDownMenu's moeten een klein beetje aangepast worden (als dit mogelijk is). De volgende keer dat ik bezig gaat zijn gaat waarschijnelijk de validators en het toevoegen van de Transaction afgewerkt zijn (hopelijk). 
+
+[.lead]
+Veranderd (~)/toegevoegd (+)/verwijderd (-)
+
+* Views:
+** Pages:
+*** ~ Home Page: Het laden van alle data van de gebruiker
+** Widgets:
+*** ~ Floating Action Button: De onPressed goed toegewezen
+*** ~ Toggle Button: Ergens anders gezet
+*** Forms:
+**** ~ Big Button: Een nieuwe button aangemaakt die makkelijk te designen is voor grote knoppen in forms
+**** ~ Small Button: Dit had ik aangepast zodat ik een onderscheid kan maken tussen grote en kleine knoppen
+**** ~ DropDown: Grote veranderingen zodat dit item herbruikbaar is
+**** ~ TextField: Grote veranderingen zodat dit item herbruikbaar is
+**** ~ Add Transaction Form: Dit is veranderd van een page naar een form
+** Sliding Page: Kleine aanpassingen zodat het toegankelijker is
+* View Models:
+** Local View Model: Grote probleem gedebugged, NotifyListener weggehaald bij .fetchData()
+* Core:
+** Exceptions:
+*** + Validation Exception: Toegevoegd en basis gezet
+** Models:
+*** ~ Transaction: Contact toegevoegd en een getContact method geimplementeerd
+** Repositorie:
+*** ~ Local Repository: getContact van Transaction method geimplementeerd
+** Services:
+*** + Validator Services: Toegevoegd en basis gezet
+** Utils:
+*** Theme: Witte text toegevoegd
+*** String Utils: Basis gezet

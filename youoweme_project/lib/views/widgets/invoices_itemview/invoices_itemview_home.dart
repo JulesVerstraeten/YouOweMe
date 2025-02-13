@@ -37,7 +37,7 @@ class InvoiceListviewWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: screenWidth * 0.5,
+                      width: screenWidth * 0.45,
                       child: Text(
                         contact.giveName(),
                         style: TextStyle(

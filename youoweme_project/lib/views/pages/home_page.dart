@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final localViewModel = Provider.of<LocalViewModel>(context);
+
     List<String> items = ['Bedrag hoog -> laag', 'Bedrag laag -> hoog'];
 
     return Scaffold(
@@ -30,61 +31,67 @@ class HomePage extends StatelessWidget {
       body: FutureBuilder(
         future: localViewModel.fetchData(),
         builder: (context, snapshot) {
-          return SafeArea(
-            child: Column(
-              children: [
-                // * Top Total Amount
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 16,
-                    horizontal: 24,
-                  ),
-                  // margin: EdgeInsets.all(16.0),
-                  // decoration: BoxDecoration(
-                  //   color: AppStyles.primaryColor(context),
-                  //   borderRadius: BorderRadius.circular(20),
-                  // ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Totaal:",
-                        style: TextStyle(
-                          fontSize: 32,
-                          color: AppStyles.darkText(context),
-                        ),
-                      ),
-                      Text(
-                        localViewModel.getTotalAmountToString(),
-                        style: TextStyle(
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text("Error"));
+          } else {
+            return SafeArea(
+              child: Column(
+                children: [
+                  // * Top Total Amount
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16,
+                      horizontal: 24,
+                    ),
+                    // margin: EdgeInsets.all(16.0),
+                    // decoration: BoxDecoration(
+                    //   color: AppStyles.primaryColor(context),
+                    //   borderRadius: BorderRadius.circular(20),
+                    // ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Totaal:",
+                          style: TextStyle(
                             fontSize: 32,
-                            color: AppStyles.darkText(
-                              context,
-                            )),
-                      ),
-                    ],
+                            color: AppStyles.darkText(context),
+                          ),
+                        ),
+                        Text(
+                          localViewModel.getTotalAmountToString(),
+                          style: TextStyle(
+                              fontSize: 32,
+                              color: AppStyles.darkText(
+                                context,
+                              )),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
 
-                // TODO Sort list button
-                DropdownButton(
-                  hint: Text("Sort"),
-                  items: items.map((String item) {
-                    return DropdownMenuItem<String>(
-                      value: item,
-                      child: Text(item),
-                    );
-                  }).toList(),
-                  onChanged: (String? newValue) {
-                    setState(() {});
-                  },
-                ),
+                  // TODO Sort list button
+                  DropdownButton(
+                    hint: Text("Sort"),
+                    items: items.map((String item) {
+                      return DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(item),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      setState(() {});
+                    },
+                  ),
 
-                // * Outstanding invoices
-                InvoiceListviewWidget(),
-              ],
-            ),
-          );
+                  // * Outstanding invoices
+                  InvoiceListviewWidget(),
+                ],
+              ),
+            );
+          }
         },
       ),
     );

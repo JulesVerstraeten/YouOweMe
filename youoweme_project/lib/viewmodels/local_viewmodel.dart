@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youoweme_project/core/models/contact.dart';
+import 'package:youoweme_project/core/models/transaction.dart';
 import 'package:youoweme_project/core/models/user.dart';
 import 'package:youoweme_project/core/repositories/local_repository.dart';
 
@@ -11,7 +12,7 @@ class LocalViewModel extends ChangeNotifier {
   User? _user;
   List<Contact> _contacts = [];
   List<Contact> _contactsWithOpenTransaction = [];
-  late Contact? _selectedContact;
+  Contact? _selectedContact;
 
   User? get user => _user;
   List<Contact> get contacts => _contacts;
@@ -23,7 +24,6 @@ class LocalViewModel extends ChangeNotifier {
     _contacts = await _repo.giveAllContacts();
     _contactsWithOpenTransaction =
         await _repo.getAllContactsWithOpenTransaction();
-    notifyListeners();
   }
 
   String getTotalAmountToString() {
@@ -34,5 +34,13 @@ class LocalViewModel extends ChangeNotifier {
   void selectContact(Contact contact) {
     _selectedContact = contact;
     notifyListeners();
+  }
+
+  void clearSelectedContact() {
+    _selectedContact = null;
+  }
+
+  void addTransactionToContact(Transaction transaction) {
+    transaction.getContact();
   }
 }

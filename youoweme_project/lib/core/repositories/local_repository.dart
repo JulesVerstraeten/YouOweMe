@@ -16,6 +16,7 @@ class LocalRepository {
         id: 0,
         amount: 80,
         title: "Bioscoop",
+        contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
@@ -23,6 +24,7 @@ class LocalRepository {
         id: 1,
         amount: 120,
         title: "Bier",
+        contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
@@ -30,6 +32,7 @@ class LocalRepository {
         id: 2,
         amount: 110,
         title: "Bier",
+        contact: c2,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
@@ -37,6 +40,7 @@ class LocalRepository {
         id: 3,
         amount: 110,
         title: "Bier",
+        contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
@@ -44,6 +48,7 @@ class LocalRepository {
         id: 4,
         amount: 80,
         title: "Hoeren",
+        contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.closed,
         transactionType: TransactionType.loan);

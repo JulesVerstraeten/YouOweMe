@@ -48,6 +48,10 @@ class AppStyles {
         : const Color.fromARGB(255, 255, 255, 255);
   }
 
+  static Color whiteText(BuildContext context) {
+    return const Color.fromARGB(255, 255, 255, 255);
+  }
+
   static Color darkTextHint(BuildContext context) {
     return Theme.of(context).brightness == Brightness.light
         ? const Color.fromARGB(124, 45, 45, 45)
@@ -57,13 +61,13 @@ class AppStyles {
   static Color primaryBlue(BuildContext context) {
     return Theme.of(context).brightness == Brightness.light
         ? const Color.fromRGBO(72, 151, 255, 1)
-        : const Color.fromARGB(255, 255, 255, 255);
+        : const Color.fromRGBO(72, 151, 255, 1);
   }
 
   static Color primaryRed(BuildContext context) {
     return Theme.of(context).brightness == Brightness.light
         ? const Color.fromRGBO(250, 63, 67, 1)
-        : Colors.black;
+        : const Color.fromRGBO(250, 63, 67, 1);
   }
 
   static Color colorSelectedTextSwitchButton(BuildContext context) {

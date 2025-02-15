@@ -1,13 +1,13 @@
-= You Owe Me - Logboek
+# You Owe Me - Logboek
 :author: Jules Verstraeten
 :toc: auto
 :imagesdir: images
 
 link:home.adoc[Home]
 
-== TODO's
+## TODO's
 
-=== Versie Beta 1.0
+### Versie Beta 1.0
 Ik wil het meest simpelste versie van het programma, het enigste wat men moet kunnen doen is een contact toevoegen, een lening bij dat contact persoon open zetten, en een lening afbetaald zetten, als lening is afbetaald gaat de lening naar de historie
 
     * [*] Modellen maken
@@ -15,8 +15,8 @@ Ik wil het meest simpelste versie van het programma, het enigste wat men moet ku
     * [] Repositorie maken
     * [] UI maken
 
-== Week 6
-=== 05/02
+## Week 6
+### 05/02
 Circa 2.5 uur
 
 [.lead]
@@ -221,30 +221,4 @@ Circa 2 uur
 [.lead]
 2 uur: UI Add Transaction Page
 
-    Ui van de transaction-page is zo goed als af. 
-    Hij is helemaal herbruik baar dus als ik aan contact-page ga beginnen is dat zo gebeurd. 
-    Ook als je gaat toevoegen werkt naar toebehoren.
-
-[.lead]
-Veranderd (~)/toegevoegd (+)/verwijderd (-)
-
-* Views:
-** Widgets:
-*** Form:
-**** + Datepicker: Datepicker toegevoegd en naar toebehoren gemaakt
-**** ~ Dropdown: Validator toegevoegd en een beetje toegankelijker aangepast zodat hij herbruikaar is
-**** ~ TextField: Validator, controller, maxlines en andere toepassingen toegevoegd zodat hij toegankelijker is voor herbruikbaar
-**** ~ Add Transaction Form: Helemaal aangepast zodat dit in goede toepassing is
-* View Models:
-** Local View Model: GetContact en AddTransactionToContact toegevoegd
-* Core:
-** Models:
-*** ~ Transaction: SetId voor een Transaction te maken en een constructor gemaakt voor zonder id
-*** ~ Contact: AddTransaction toegepast
-** Services:
-*** ~ Validator Service: Objecten aangepast en toegevoegd en werk naar toebehoren
-** Repository:
-*** Local Repostiroy: AddTransaction toegevoegd en lokale id opriser toegepast
-** Utils: 
-*** Navigation Helper: Map structuur van dit aangepast zodat het overzichtelijker is
-*** Theme: Rode kleur aangepast
+    Ui van de transaction-page is zo goed als af. Hij is helemaal herbruik baar dus als ik aan contact-page ga beginnen is dat zo gebeurd. Ook als je gaat toevoegen werkt naar toebehoren.

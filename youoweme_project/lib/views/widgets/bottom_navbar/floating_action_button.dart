@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
-import 'package:youoweme_project/views/sliding_pages/add_transaction_slidepage.dart';
+import 'package:youoweme_project/views/sliding_pages/sliding_page.dart';
+import 'package:youoweme_project/views/widgets/forms/add_transaction_form.dart';
 
 class FloatingActionButtonCenterDock extends StatelessWidget {
   const FloatingActionButtonCenterDock({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final transactionPage = AddTransactionSlidePage();
     return SizedBox(
       width: 65,
       height: 65,
@@ -22,7 +22,7 @@ class FloatingActionButtonCenterDock extends StatelessWidget {
         ),
         onPressed: () {
           // Handle the floating action button press here
-          transactionPage.showSlidingPage(context);
+          SlidingPage().openSlidingPage(context, AddTransactionForm());
         },
       ),
     );

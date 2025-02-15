@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:youoweme_project/core/utils/navigations/navigation_helper.dart';
+import 'package:youoweme_project/core/utils/navigation_helper.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 import 'package:youoweme_project/viewmodels/local_viewmodel.dart';
 
@@ -37,7 +37,7 @@ class InvoiceListviewWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     SizedBox(
-                      width: screenWidth * 0.5,
+                      width: screenWidth * 0.45,
                       child: Text(
                         contact.giveName(),
                         style: TextStyle(

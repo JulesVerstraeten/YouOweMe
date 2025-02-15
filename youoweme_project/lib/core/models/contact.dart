@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:youoweme_project/core/models/transaction.dart';
 import 'package:youoweme_project/core/models/transaction_status.dart';
 
@@ -45,8 +46,14 @@ class Contact {
   }
 
   // * Add transaction to contact
-  void addTransaction(Transaction transaction) {
-    _transactions[transaction.returnId()] = transaction;
+  Future<void> addTransaction(Transaction transaction) async {
+    try {
+      if (transaction.returnId() != null) {
+        _transactions[transaction.returnId()!] = transaction;
+      }
+    } catch (e) {
+      debugPrint("Fout: ${e.toString()}");
+    }
   }
 
   // * Returns contact's ID
@@ -83,5 +90,9 @@ class Contact {
       }
     }
     return openTransactions;
+  }
+
+  int getId() {
+    return _id;
   }
 }

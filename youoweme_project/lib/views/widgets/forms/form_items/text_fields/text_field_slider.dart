@@ -5,14 +5,19 @@ class InputFieldSlider extends StatelessWidget {
   final int? _maxLines;
   final String? _hintText;
   final TextInputType _keyboardType;
-  InputFieldSlider(
+  final String? Function(String?)? validator;
+  final TextEditingController _controller;
+  const InputFieldSlider(
       {super.key,
       String? hintText,
       TextInputType? numberKeyboard,
-      int? maxLines})
+      int? maxLines,
+      this.validator,
+      required TextEditingController controller})
       : _hintText = hintText,
         _keyboardType = numberKeyboard ?? TextInputType.text,
-        _maxLines = maxLines ?? 1;
+        _maxLines = maxLines ?? 1,
+        _controller = controller;
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +25,8 @@ class InputFieldSlider extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 8.0),
       //margin: EdgeInsets.symmetric(horizontal: 16.0),
       child: TextFormField(
+        controller: _controller,
+        validator: validator,
         maxLines: _maxLines,
         cursorColor: AppStyles.darkText(context),
         keyboardType: _keyboardType,
@@ -31,6 +38,16 @@ class InputFieldSlider extends StatelessWidget {
           hintText: _hintText,
           hintStyle: TextStyle(color: AppStyles.darkTextHint(context)),
           fillColor: AppStyles.textFieldFill(context),
+          errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide:
+                BorderSide(width: 2, color: AppStyles.primaryRed(context)),
+          ),
+          focusedErrorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(20),
+            borderSide:
+                BorderSide(width: 2, color: AppStyles.primaryRed(context)),
+          ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(20),
             borderSide:

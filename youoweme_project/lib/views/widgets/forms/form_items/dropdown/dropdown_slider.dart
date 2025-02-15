@@ -3,11 +3,12 @@ import 'package:youoweme_project/core/utils/string_utils.dart';
 import 'package:youoweme_project/core/utils/theme.dart';
 
 class DropDownSlider<T> extends StatelessWidget {
-  final String? hintText;
+  final String? label;
   final List<T> items;
   final T? selectedItem;
   final String Function(T) itemLabelBuilder;
   final Function(T?) onChanged;
+  final String? Function(T?)? validator;
 
   const DropDownSlider(
       {super.key,
@@ -15,7 +16,8 @@ class DropDownSlider<T> extends StatelessWidget {
       this.selectedItem,
       required this.itemLabelBuilder,
       required this.onChanged,
-      this.hintText = "Kies contact"});
+      this.label = "-",
+      this.validator});
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,9 @@ class DropDownSlider<T> extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 8.0),
         constraints: BoxConstraints(maxWidth: 10000),
         child: DropdownButtonFormField<T>(
+          validator: validator,
           decoration: InputDecoration(
-            hintText: hintText,
+            hintText: label,
             filled: true,
             fillColor: AppStyles.textFieldFill(context),
             focusedBorder: OutlineInputBorder(
@@ -37,6 +40,16 @@ class DropDownSlider<T> extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               borderSide:
                   BorderSide(width: 0, color: AppStyles.textFieldFill(context)),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide:
+                  BorderSide(width: 2, color: AppStyles.primaryRed(context)),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(20),
+              borderSide:
+                  BorderSide(width: 2, color: AppStyles.primaryRed(context)),
             ),
           ),
           isExpanded: true,

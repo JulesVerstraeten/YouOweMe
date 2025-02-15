@@ -6,7 +6,7 @@ import 'package:youoweme_project/core/models/transaction_status.dart';
 import 'package:youoweme_project/core/models/transaction_type.dart';
 
 class Transaction {
-  final int _id;
+  late final int? _id;
   final double _amount;
   final String _title;
   final String? _description;
@@ -18,7 +18,7 @@ class Transaction {
   final List<Payment> _payments = [];
 
   Transaction({
-    required int id,
+    int? id,
     required double amount,
     required String title,
     String? description,
@@ -29,6 +29,24 @@ class Transaction {
     required TransactionType transactionType,
   })  : _id = id,
         _amount = amount,
+        _title = title,
+        _description = description,
+        _contact = contact,
+        _createdAt = createdAt,
+        _paymentDay = paymentDay,
+        _transactionStatus = transactionStatus,
+        _transactionType = transactionType;
+
+  Transaction.withoutId({
+    required double amount,
+    required String title,
+    String? description,
+    required Contact contact,
+    required DateTime createdAt,
+    DateTime? paymentDay,
+    required TransactionStatus transactionStatus,
+    required TransactionType transactionType,
+  })  : _amount = amount,
         _title = title,
         _description = description,
         _contact = contact,
@@ -51,7 +69,7 @@ class Transaction {
   }
 
   // * Return transaction's ID
-  int returnId() {
+  int? returnId() {
     return _id;
   }
 
@@ -69,5 +87,9 @@ class Transaction {
 
   Contact getContact() {
     return _contact;
+  }
+
+  void setId(int id) {
+    _id = id;
   }
 }

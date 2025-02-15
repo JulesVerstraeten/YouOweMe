@@ -40,7 +40,13 @@ class LocalViewModel extends ChangeNotifier {
     _selectedContact = null;
   }
 
-  void addTransactionToContact(Transaction transaction) {
-    transaction.getContact();
+  Future<void> addTransactionToContact(Transaction transaction) async {
+    await _repo.addTransaction(transaction);
+    await fetchData();
+    notifyListeners();
+  }
+
+  Contact getContact(int id) {
+    return _contacts[id];
   }
 }

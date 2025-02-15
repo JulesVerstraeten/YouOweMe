@@ -67,7 +67,7 @@ class AppStyles {
   static Color primaryRed(BuildContext context) {
     return Theme.of(context).brightness == Brightness.light
         ? const Color.fromRGBO(250, 63, 67, 1)
-        : Colors.black;
+        : const Color.fromRGBO(250, 63, 67, 1);
   }
 
   static Color colorSelectedTextSwitchButton(BuildContext context) {

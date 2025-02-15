@@ -6,52 +6,62 @@ import 'package:youoweme_project/core/models/user.dart';
 
 class LocalRepository {
   late User user;
+  int contactId = 0;
+  int transactionId = 0;
 
   LocalRepository() {
     user = User(id: 0);
-    Contact c1 = Contact(id: 0, name: "Jan Betere");
-    Contact c2 = Contact(id: 1, name: "Peter Haargeenmeterereer");
-    Contact c3 = Contact(id: 2, name: "Piet slimme");
+    Contact c1 = Contact(id: contactId, name: "Jan Betere");
+    contactId++;
+    Contact c2 = Contact(id: contactId, name: "Peter Haargeenmeterereer");
+    contactId++;
+    Contact c3 = Contact(id: contactId, name: "Piet slimme");
+    contactId++;
     Transaction t1 = Transaction(
-        id: 0,
+        id: transactionId,
         amount: 80,
         title: "Bioscoop",
         contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
+    transactionId++;
     Transaction t2 = Transaction(
-        id: 1,
+        id: transactionId,
         amount: 120,
         title: "Bier",
         contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
+    transactionId++;
     Transaction t3 = Transaction(
-        id: 2,
+        id: transactionId,
         amount: 110,
         title: "Bier",
         contact: c2,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
+    transactionId++;
     Transaction t4 = Transaction(
-        id: 3,
+        id: transactionId,
         amount: 110,
         title: "Bier",
         contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.open,
         transactionType: TransactionType.loan);
+    transactionId++;
     Transaction t5 = Transaction(
-        id: 4,
+        id: transactionId,
         amount: 80,
         title: "Hoeren",
         contact: c1,
         createdAt: DateTime.now(),
         transactionStatus: TransactionStatus.closed,
         transactionType: TransactionType.loan);
+    transactionId++;
     user.addContact(c1);
     user.addTransactionToContact(c1, t1);
     user.addTransactionToContact(c1, t2);
@@ -60,6 +70,12 @@ class LocalRepository {
     user.addContact(c2);
     user.addTransactionToContact(c2, t3);
     user.addContact(c3);
+  }
+
+  Future<void> addTransaction(Transaction transaction) async {
+    transaction.setId(transactionId);
+    transactionId++;
+    await transaction.getContact().addTransaction(transaction);
   }
 
   User fetchUser() {

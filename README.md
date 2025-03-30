@@ -29,4 +29,3 @@ Wil je bijdragen? Pull requests zijn welkom! Fork de repo, maak je wijzigingen e
 MIT License. Gebruik, hack en verbeter zoals je wilt!
 
 🔥 **Stop met vergeten wie jou nog geld schuldig is. You Owe Me regelt het voor je!**
-

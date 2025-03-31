@@ -45,6 +45,10 @@ link:logboek.adoc[Logboek]
 
 image::class-diagram.png[class-diagram]
 
-== Design
+== UI Design
 
-link:design.adoc[Design]
+link:design.adoc[UI Design]
+
+== API Design
+
+link:api-design.adoc[API Design]

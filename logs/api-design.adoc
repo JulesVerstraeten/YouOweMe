@@ -1,0 +1,142 @@
+= You Owe Me
+:author: Jules Verstraeten
+:toc: auto
+:imagesdir: images
+
+== Beschrijving
+Dit document bevat alle informatie voor de restful api design. Deze design is bedoeld voor het minimale wat ik nodig heb voor de eerste release
+
+== Endpoints
+
+=== 1. Auth
+====
+*URL:* /auth/login
+
+*HTTP Methode:* POST
+
+*Doel:* Log de gebruiker in
+====
+====
+*URL:* /auth/register
+
+*HTTP Methode:* POST
+
+*Doel:* Maakt een nieuwe gebruiker aan 
+
+====
+=== 2. Users
+====
+*URL:* /users/{userId}
+
+*HTTP Methode:* GET
+
+*Doel:* Haalt de gebruiker op
+==== 
+=== 3. Contacts
+====
+*URL:* /users/{userId}/contacts/
+
+*HTTP Methode:* POST
+
+*Doel:* Maakt een nieuwe contact persoon aan 
+====
+====
+*URL:* /users/{userId}/contacts
+
+*HTTP Methode:* GET
+
+*Doel:* Haalt alle contact personen op
+====
+====
+*URL:* /contacts/{contactId}
+
+*HTTP Methode:* GET
+
+*Doel:* Haalt een contact persoon op
+====
+====
+*URL:* /contacts/{contactId}
+
+*HTTP Methode:* PUT
+
+*Doel:* Wijzigt een contact persoon
+====
+====
+*URL:* /contacts/{contactId}
+
+*HTTP Methode:* DELETE
+
+*Doel:* Verwijderdt een contact persoon
+====
+=== 4. Transactions
+====
+*URL:* /contacts/{contactId}/transactions
+
+*HTTP Methode:* POST
+
+*Doel:* Voegt een transactie toe aan een contact persoon
+====
+====
+*URL:* /contacts/{contactId}/transactions
+
+*HTTP Methode:* GET
+
+*Doel:* Haalt alle transacties op van een contact persoon
+====
+====
+*URL:* /transactions/{transactionId}
+
+*HTTP Methode:* GET
+
+*Doel:* Haalt een transactie op van een contact persoon
+====
+====
+*URL:* /transactions/{transactionId}
+
+*HTTP Methode:* PUT
+
+*Doel:* Wijzigt een transactie aan van een contact persoon
+====
+====
+*URL:* /transactions/{transactionId}
+
+*HTTP Methode:* DELETE
+
+*Doel:* Verwijderdt een transactie aan van een contact persoon
+====
+=== 5. Payements
+====
+*URL:* /transactions/{transactionId}/payements
+
+*HTTP Methode:* POST
+
+*Doel:* Plaatst een betaling voor een transactie
+====
+====
+*URL:* /transactions/{transactionId}/payements
+
+*HTTP Methode:* GET
+
+*Doel:* Haalt alle betalingen van een transactie op
+====
+====
+*URL:* /payements/{payementId}
+
+*HTTP Methode:* GET
+
+*Doel:* Haalt een betaling op van een transactie
+====
+====
+*URL:* /payements/{payementId}
+
+*HTTP Methode:* PUT
+
+*Doel:* Bewerkt een betaling van een transactie
+====
+====
+*URL:* /payements/{payementId}
+
+*HTTP Methode:* DELETE
+
+*Doel:* Verwijderdt een betaling van een transactie
+====
